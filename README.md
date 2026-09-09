@@ -6,7 +6,7 @@ provider behind it, signed webhooks when money lands.
 
 | Language | Where | Install |
 | --- | --- | --- |
-| TypeScript / JavaScript (Bun, Node ≥ 18) | repo root, `src/` | `bun add github:crisskimaryo/zaga-payments-sdk` |
+| TypeScript / JavaScript (Bun, Node ≥ 18) | repo root, `src/` | `npm install github:crisskimaryo/zaga-payments-sdk#v0.1.0` |
 | Dart (servers, or Flutter with test keys) | `dart/` | pubspec git dependency with `path: dart` (below) |
 | Python ≥ 3.9 | `python/` | `pip install "git+https://github.com/crisskimaryo/zaga-payments-sdk.git#subdirectory=python"` |
 
@@ -17,10 +17,13 @@ Pin a tag once you are in production, e.g. `github:crisskimaryo/zaga-payments-sd
 ## TypeScript
 
 ```bash
-bun add github:crisskimaryo/zaga-payments-sdk
-# or, with npm/pnpm:
-npm install github:crisskimaryo/zaga-payments-sdk
+npm install github:crisskimaryo/zaga-payments-sdk#v0.1.0      # npm / pnpm: git clone, works while the repo is private
+bun add zaga-payments@github:crisskimaryo/zaga-payments-sdk#v0.1.0   # bun fetches the GitHub tarball: needs the repo public
 ```
+
+Bun with a private repo: install with npm (or vendor `src/index.ts`) until the
+repository is public; Bun downloads GitHub packages as API tarballs and does not
+use your git credentials.
 
 ```ts
 import { ZagaPayments, parseWebhook } from 'zaga-payments';

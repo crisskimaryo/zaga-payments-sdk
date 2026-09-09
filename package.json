@@ -5,14 +5,37 @@
   "type": "module",
   "main": "src/index.ts",
   "types": "src/index.ts",
-  "exports": { ".": "./src/index.ts" },
-  "files": ["src", "README.md", "LICENSE"],
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "test": "bun test"
   },
-  "repository": { "type": "git", "url": "https://github.com/crisskimaryo/zaga-payments-sdk.git" },
-  "keywords": ["payments", "mobile-money", "tanzania", "mpesa", "tigopesa", "airtel-money", "zaga"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crisskimaryo/zaga-payments-sdk.git"
+  },
+  "keywords": [
+    "payments",
+    "mobile-money",
+    "tanzania",
+    "mpesa",
+    "tigopesa",
+    "airtel-money",
+    "zaga"
+  ],
   "license": "MIT",
-  "devDependencies": { "@types/bun": "^1.2", "@types/node": "^22", "typescript": "^5" }
+  "devDependencies": {
+    "@types/bun": "^1.2",
+    "@types/node": "^22",
+    "dotenv": "^8.2.0",
+    "node-fetch": "^3.3.2",
+    "typescript": "^5"
+  }
 }
