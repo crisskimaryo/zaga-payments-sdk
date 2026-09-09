@@ -39,7 +39,7 @@ const settled = await payments.charges.waitForSettlement(charge.id);
 // 2b. receive the signed webhook (raw body!)
 app.post('/webhooks/zaga', async (req) => {
   const event = parseWebhook({ secret: process.env.ZAGA_WEBHOOK_SECRET!, headers: req.headers, body: await req.text() });
-  if (event.type === 'charge.completed') fulfil(event.data.object);
+  if (event.type === 'charge.completed') fulfil(event.data.charge);
   return new Response('ok');
 });
 

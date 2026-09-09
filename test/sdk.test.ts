@@ -6,7 +6,7 @@ const secret = 'whsec_test_secret';
 const sign = (timestamp: string, body: string) => `v1=${createHmac('sha256', secret).update(`${timestamp}.${body}`).digest('hex')}`;
 
 describe('webhook verification', () => {
-  const body = JSON.stringify({ id: 'evt_1', type: 'charge.completed', data: { object: { id: 'ch_1' } } });
+  const body = JSON.stringify({ id: 'evt_1', type: 'charge.completed', data: { charge: { id: 'ch_1' } } });
   const timestamp = String(Math.floor(Date.now() / 1000));
 
   test('accepts a fresh, correctly signed delivery', () => {
