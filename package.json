@@ -1,0 +1,18 @@
+{
+  "name": "zaga-payments",
+  "version": "0.1.0",
+  "description": "Client for the Zaga Payments gateway: create charges, poll status, refunds, and verify signed webhooks. Dependency-free.",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "exports": { ".": "./src/index.ts" },
+  "files": ["src", "README.md", "LICENSE"],
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "bun test"
+  },
+  "repository": { "type": "git", "url": "https://github.com/crisskimaryo/zaga-payments-sdk.git" },
+  "keywords": ["payments", "mobile-money", "tanzania", "mpesa", "tigopesa", "airtel-money", "zaga"],
+  "license": "MIT",
+  "devDependencies": { "@types/bun": "^1.2", "@types/node": "^22", "typescript": "^5" }
+}

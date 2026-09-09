@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.env
+.env.*
+*.log
+.DS_Store
+dart/.dart_tool/
+dart/pubspec.lock
+python/build/
+python/*.egg-info/
+__pycache__/
